@@ -1,9 +1,9 @@
+use std::collections::HashMap;
 use std::error::Error;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
-fn result1() -> Result<String, Box<dyn Error>> {
-    let num = "123456789";
+pub fn result1() -> Result<String, Box<dyn Error>> {
     let digit_mapping: Vec<(&str, i32)> = vec![
         ("1", 1),
         ("2", 2),
@@ -62,7 +62,7 @@ fn result1() -> Result<String, Box<dyn Error>> {
     Ok(total.to_string())
 }
 
-fn result2() -> Result<String, Box<dyn Error>> {
+pub fn result2() -> Result<String, Box<dyn Error>> {
     let num = "123456789";
     let digit_mapping: Vec<(&str, i32)> = vec![
         ("one", 1),
