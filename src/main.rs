@@ -1,5 +1,6 @@
 mod day1;
 mod day2;
+mod day3;
 
 use std::error::Error;
 use std::fs::File;
@@ -10,10 +11,11 @@ use std::path::Path;
 use log::error;
 use crate::day1::result2;
 use crate::day2::day2_b;
+use crate::day3::{day3_a, day3_b, extract_lines_in_pos};
 
 fn main() {
     println!("Advent of code");
-    let result = day2_b();
+    let result = day3_b();
     match result {
         Ok(r) => println!("result:\n {}", r),
         Err(e) => println!("error:\n {}", e)
