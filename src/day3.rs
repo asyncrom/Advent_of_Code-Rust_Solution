@@ -3,8 +3,8 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 use regex::Regex;
 
-pub fn day3_a() -> Result<String, Box<dyn Error>> {
-    let file = File::open("/tmp/3.txt")?;
+pub fn day3_a(path: &str) -> Result<String, Box<dyn Error>> {
+    let file = File::open(path)?;
     let reader = BufReader::new(file);
     let lines: Vec<String> = reader.lines().map(|line| {line.unwrap()}).collect();
 
@@ -89,8 +89,8 @@ fn contains_symbol(s: String) -> bool {
     s.chars().any(|c| !c.is_digit(10) && c != '.')
 }
 
-pub fn day3_b() -> Result<String, Box<dyn Error>> {
-    let file = File::open("/tmp/3.txt")?;
+pub fn day3_b(path: &str) -> Result<String, Box<dyn Error>> {
+    let file = File::open(path)?;
     let reader = BufReader::new(file);
     let lines: Vec<String> = reader.lines().map(|line| {line.unwrap()}).collect();
 

@@ -3,7 +3,7 @@ use std::error::Error;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
-pub fn result1() -> Result<String, Box<dyn Error>> {
+pub fn day1_a(path: &str) -> Result<String, Box<dyn Error>> {
     let digit_mapping: Vec<(&str, i32)> = vec![
         ("1", 1),
         ("2", 2),
@@ -15,7 +15,7 @@ pub fn result1() -> Result<String, Box<dyn Error>> {
         ("8", 8),
         ("9", 9),
     ];
-    let file = File::open("/tmp/1.txt")?;
+    let file = File::open(path)?;
     let reader = BufReader::new(file);
 
     let mut total:u32 = 0;
@@ -62,7 +62,7 @@ pub fn result1() -> Result<String, Box<dyn Error>> {
     Ok(total.to_string())
 }
 
-pub fn result2() -> Result<String, Box<dyn Error>> {
+pub fn day1_b(path: &str) -> Result<String, Box<dyn Error>> {
     let num = "123456789";
     let digit_mapping: Vec<(&str, i32)> = vec![
         ("one", 1),
@@ -84,7 +84,7 @@ pub fn result2() -> Result<String, Box<dyn Error>> {
         ("8", 8),
         ("9", 9),
     ];
-    let file = File::open("/tmp/1.txt")?;
+    let file = File::open(path)?;
     let reader = BufReader::new(file);
 
     let mut total:u32 = 0;

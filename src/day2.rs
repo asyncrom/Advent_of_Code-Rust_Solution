@@ -8,8 +8,8 @@ struct Game {
     pub sets: Vec<(u32, u32, u32)> // Vec<(red, blue, green)>
 }
 
-pub fn day2_a() -> Result<String, Box<dyn Error>> {
-    let file = File::open("/tmp/2.txt")?;
+pub fn day2_a(path: &str) -> Result<String, Box<dyn Error>> {
+    let file = File::open(path)?;
     let reader = BufReader::new(file);
 
     // Define consts
@@ -71,8 +71,8 @@ pub fn day2_a() -> Result<String, Box<dyn Error>> {
     Ok(total_sum.to_string())
 }
 
-pub fn day2_b() -> Result<String, Box<dyn Error>> {
-    let file = File::open("/tmp/2.txt")?;
+pub fn day2_b(path: &str) -> Result<String, Box<dyn Error>> {
+    let file = File::open(path)?;
     let reader = BufReader::new(file);
 
     // Define consts
